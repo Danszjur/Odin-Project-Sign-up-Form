@@ -1,7 +1,11 @@
+
+@font-face {
+    font-family: odin-font;
+    src: url(./assets/Norse-Bold.otf);
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-
     font-weight: 600;
 }
 
@@ -11,8 +15,8 @@ img{
     object-fit: cover;
 }
 main{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 main>div{
     background-color: hsl(0, 0%, 97%);
@@ -25,24 +29,26 @@ main>div>div>p{
 }
 form{
     background-color: white;
-    box-shadow: 0 5px 5px hsl(0, 0%, 60%);
+    box-shadow: 0 5px 5px hsl(0, 0%, 80%);
     padding-bottom: 20px;
 }
 form>div{
     display: grid;
-    grid-template-columns: 330px auto;
+    grid-template-columns: 330px 500px;
+    
 
 }
 form>div>div{
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
     justify-self: center;
+    margin-bottom: 5px;
+    
 }
 form>p{
     font-size: 1.6rem;
     font-weight: 100;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 label{
     margin-bottom: 5px;
@@ -57,12 +63,20 @@ input{
     transition: all 50ms;
     border: 1px solid hsl(0, 0%, 70%);
     border-radius: 7px;
+    outline: none;
 }
 input:focus{
     box-shadow: 0 5px 5px lightgray;
+    border: 1px solid blue;
+}
+.input-no-good{
+    box-shadow: 0 5px 5px lightgray;
+    border: 1px solid red;
 }
 button{
-    background-color: hsl(120, 75%, 24%);
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color: #596D48;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -70,5 +84,61 @@ button{
     height: 50px;
     border: none;
     border-radius: 10px;
-    margin: 30px;
+    transition-property: all;
+    transition-duration: 50ms;
+}
+button:hover{
+    opacity: 0.9;
+}
+button:active{
+    opacity: 0.8;
+}
+a{
+    color: #596D48;
+}
+a:visited{
+    color: hwb(89 16% 76%)
+}
+a:hover{
+    opacity: 0.9;
+}
+a:active{ 
+    opacity: 0.8;
+}
+.textContainer1>p{
+    width: 690px;
+}
+.odinText{
+    font-family: odin-font;
+    font-size: 8rem;
+    margin: 0;
+}
+.odinImg{
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+}
+.odinLabel{
+    position: absolute;
+
+    height: 150px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    top: 300px;
+    left: 0;
+    width: 600px;
+    
+}
+p{
+    margin-left: 30px;
+}
+#wrongPass1, #wrongPass2{
+    display: none;
+    font-size: 0.7rem;
+    color: red;
 }
